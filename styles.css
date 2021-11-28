@@ -1,0 +1,593 @@
+@import url('https://fonts.googleapis.com/css2?family=Commissioner:wght@400;500;700&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+}
+html {
+    font-family: 'Commissioner';
+}
+body {
+    background-color: rgb(250,250,250);
+}
+h2 {
+    padding-top: 30px;
+    margin: 20px;
+    font-size: 2em;
+    text-align: center;
+}
+p {
+    margin: 20px 25px 30px;
+    font-size: 16px;
+    color: hsl(0, 0%, 48%);
+    line-height: 1.6;
+    text-align: left;
+}
+section {
+    margin-bottom: 30px;
+    border: 1px hsl(0, 0%, 70%) solid;
+    border-radius: 5px;
+    width: 90%;
+    position: relative;
+    left: 5%;
+}
+a{
+    color:white;
+    text-decoration: none;
+    padding: 25px;
+    transition: 0.3s;
+}
+a:hover{
+    color: #aaa;
+}
+button{
+    cursor: pointer;
+}
+section button {
+    color: white;
+    padding: 20px 35px;
+    border-radius: 50px;
+    font-size: 16px;
+    background-color: hsl(176, 50%, 47%);
+    font-weight: 700;
+    margin: 10px auto 20px 20px;
+    text-decoration: none;
+    border: none;
+    transition: 0.3s;
+    cursor: pointer;
+}
+.modal-wrap{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color:rgb(0,0,0,0.5);
+    z-index: 4;
+    display: none;
+}
+.modal{
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%) scale(0);
+    background-color: white;
+    border-radius: 5px;
+    width: 90%;
+    height: 380px;
+    z-index: 5;
+    text-align: center;
+}
+.modal-wrap.active{
+    display: inline;
+}
+.modal.active{
+    transform: translate(-50%,-50%) scale(1);
+}
+.check{
+    margin-top: 25px;
+    margin-bottom: 10px;
+}
+.got{
+    position: relative;
+    color: white;
+    padding: 20px 35px;
+    border-radius: 50px;
+    font-size: 16px;
+    background-color: hsl(176, 50%, 47%);
+    font-weight: 700;
+    margin-top:20px;
+    text-decoration: none;
+    border: none;
+}
+.popup-main{
+    position: absolute;
+    top: 150px;
+    left: 50%;
+    transform: translateX(-50%) scale(0);
+    background-color: white;
+    border: 1px solid rgb(244,244,244);
+    border-radius: 5px;
+    width: 90vw;
+    z-index: 10;
+}
+.popup-main.active{
+    transform: translateX(-50%) scale(1); 
+}
+.popup-main section{
+    height: auto;
+}
+.popup-main h3{
+    margin: 25px;
+    text-align: left;
+    display: inline-block;
+}
+.page{
+    position:relative;
+    top: -60px;
+    width: 90%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.gradient{
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 25%;
+    width: 100vw;
+    background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.01));
+}
+.modal-gradient{
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100vw;
+    background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.01));
+    transform: scale(0);
+    z-index: 2;
+}
+.modal-gradient.active{
+    transform:scale(1);
+}
+.buttons{
+    position: absolute;
+    top: 50px;
+    left: 70%;
+    display: none;
+}
+.mobile-buttons{
+    display: flex;
+    flex-direction:column;
+    background-color: white;
+    position:fixed;
+    width: 90%;
+    top: 100px;
+    left: 50%;
+    transform: translate(-50%) scale(0);
+    border-radius: 10px;
+    z-index: 5;
+    transition: 0.3s linear;
+}
+.mobile-buttons.active{
+    transform: translate(-50%) scale(1);
+}
+.mobile-buttons a{
+    color:#000;
+    font-weight: 600;
+}
+.mobile-buttons a:nth-child(2){
+    border: 1px solid rgb(244,244,244);
+}
+.mobile{
+    width: 100vw;
+}
+.pc{
+    display: none;
+    width: 100vw;
+}
+.crowd {
+    position: absolute;
+    padding: 25px 20px;
+    color: white;
+    font-size: 1.6em;
+    z-index: 3;
+}
+.hamburger {
+    position: absolute;
+    right: 10%;
+    top: 33px;
+    cursor: pointer;
+}
+.hamburger.active{
+    transform: scale(0)
+}
+.close-hamburger{
+    position: fixed;
+    right: 10%;
+    top: 33px;
+    cursor: pointer;
+    z-index: 5;
+    transform: scale(0);
+}
+.close-hamburger.active{
+    transform: scale(1);
+}
+.monitor {
+    background-color: white;
+    border-radius: 5px;
+    min-height: 150px;
+    border: 1px solid rgb(244,244,244);
+    margin-bottom: 30px;
+}
+.mastercraft {
+    position: relative;
+    left: 50%;
+    transform:translate(-28px);
+    top: -28px;
+}
+.master{ 
+    margin: auto 20px;
+    font-size: 22px;
+    text-align: center;
+}
+.monitorriser{
+    text-align: center;
+}
+.progressbar_21 p{
+    text-align: center;
+}
+.vertical{
+    border: 1px solid #CECECE;
+    width: 80px;
+    margin: auto;
+}
+.bar{
+    background-color: hsl(176, 50%, 47%);
+    height: 10px;
+    width: 90%;
+    border-radius: 25px;
+    margin: auto;
+    margin-bottom: 30px;
+}
+.btnback{
+    display:flex;
+    justify-content: space-between;
+    height: 56px;
+    margin-bottom: 50px;
+}
+.back{
+    background-color: hsl(176, 50%, 47%);
+    color: white;
+    padding: 20px 35px;
+    padding-bottom: 28px;
+    border-radius: 50px;
+    border: none;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 700;
+    margin-left: 15px;
+    transition: 0.3s;
+    cursor: pointer;
+}
+.bookmark{
+    display: none;
+    align-items: center;
+    border-radius: 50px;
+    margin-right: 15px;
+    border: none;
+    padding-right: 20px;
+}
+.bookmark span{
+    font-family: 'Commissioner';
+    font-size: 16px;
+    font-weight: 700;
+    color:hsl(0, 0%, 48%);
+}
+.bookmark .icon{
+    margin-right: 15px;
+}
+.icon-mobile{
+    margin-right: 15px;
+    cursor: pointer;
+}
+.progressbar{
+    border: 1px solid rgb(244,244,244);
+    background-color: white;
+    border-radius: 5px;
+    margin-bottom: 30px;
+}
+.container{
+    margin-bottom: 150px;
+    border: 1px solid rgb(244,244,244);
+    box-sizing: border-box;
+    background-color: white;
+    border-radius: 5px;
+}
+.container h3 {
+    margin-left: 25px;
+    margin-top: 20px;
+    text-align: left;
+}
+.special{
+    margin-bottom: 50px;
+    opacity: 0.5;
+    pointer-events: none;
+}
+.green {
+    color:hsl(176, 50%, 47%)
+}
+.left{
+    margin-right: 10px;
+    margin-top: 20px;
+    font-size: 2em;
+    color: #000;
+    font-weight: 700;
+}
+.left-modal{
+    margin-right: 10px;
+    margin-top: 20px;
+    font-size: 2em;
+    color: #000;
+    font-weight: 700;
+}
+
+.off{
+    opacity: 0.5;
+    pointer-events: none;
+}
+.close-modal{
+    float:right;
+    margin: 25px;
+    display:inline-block;
+    cursor: pointer;
+}
+.bookmark p{
+    display:none;
+}
+.inp {
+    position:relative;
+    height: 1.3rem;
+    top: 20px;
+    margin: 25px;
+    width: 10%;
+}
+.pledge-selected {
+    display: flex;
+}
+.pledge-selected-div {
+    position: relative;
+    top: 25px;
+}
+.pledge-selected h3 {
+    margin: auto
+}
+.pledge {
+    color: hsl(176, 50%, 47%);
+    display: column;
+    margin: auto;
+}
+.reward {
+    border-top: 1px solid hsl(0, 0%, 70%);
+    display: none;
+}
+.reward .active{
+    display:block;
+}
+.ent {
+    text-align: center;
+}
+.ent-pc {
+    margin-left: 20px;
+    font-size: 1rem;
+    border: none;
+    outline:none;
+    display: none;
+}
+.money-btn-cont{
+    display: flex;
+}
+..money-btn-cont-btn{
+    margin-right: 5px;
+}
+.money-btn {
+    color: black;
+    background-color: white;
+    border: 1px solid hsl(0, 0%, 70%);
+}
+.money-figure {
+    font-weight: 700;
+    color: hsl(0, 0%, 70%)
+}
+.money-btn:hover {
+    background-color: white;
+}
+.span-left {
+    display: none;
+}
+.contain { 
+    cursor: pointer;
+}
+@media(min-width: 411px){
+    .modal{
+        height: 380px;
+    }
+}
+@media(min-width:520px){
+    .monitorriser{
+        font-size: 18px;
+    }
+}
+@media(min-width: 667px){
+    .page{
+        width: 80%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .modal{
+        width: 80%;
+}
+.popup-main{
+    width: 80%;
+}
+}
+@media(orientation:landscape)){
+    .modal{
+        height: 90%;
+    }
+}
+@media(min-width:1025px){
+    a{
+        padding:25px 15px;
+    }
+    
+    p {
+        font-size: 18px;
+    }
+    h3{
+        padding-top: 20px;
+        display: inline-block;
+    }
+    h2{
+        text-align: left;
+    }
+    section{
+        min-height: auto;
+    }
+    section button{
+        float:right;
+        margin-right: 30px;
+        padding: 20px 30px;
+    }
+    section button:hover{
+        background-color: rgb(21,122,116);
+    }
+    .hamburger {
+        display: none;
+    }
+    .buttons{
+        display: inline;
+    }
+    .mobile{
+        display: none;
+    }
+    .pc{
+        display: inline;
+    }
+    .crowd{
+          padding: 40px 200px;
+    }
+    .page {
+        top: -80px;
+        width: 50%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .back{
+        margin-left: 30px;
+    }
+    .back:hover{
+        background-color: rgb(21,122,116);
+    }
+    .icon-mobile{
+        display: none;
+    }
+    .bookmark{
+        display:inline-flex;
+    }
+    .master{
+        font-size: 30px;
+    }
+    .green{
+        padding-top:20px;
+        float:right;
+        display:inline-block;
+    }
+    .btnleft{
+        display:flex;
+        justify-content: space-between;
+    }
+    .progressbar_21{
+        display:flex;
+    }
+    .progressbar_21 p{
+        text-align: left;
+    }
+    .vertical{
+        border:none;
+        border-left: 1px solid #CECECE;
+        height: 40px;
+        margin: auto;
+        width: 1px;
+    }
+    .bar{
+        display: block;
+    }
+    .modal{
+        width: 40%;
+        height: 400px;
+    }
+    .popup-main{
+        width: 50%;
+    }
+    .close-modal{
+        padding-top:20px;
+    }
+    .btn-modal{
+        display: flex;
+        justify-content: space-between;
+    }
+    .pledge-selected{
+        width: 100%;
+        box-sizing: border-box;
+    }
+    .pledge-selected-div {
+        top:15px;
+        display: flex;
+        justify-content:space-between;
+        text-align: left;
+    }
+    .pledge-selected-div h3 {
+        padding-top: 0;
+        margin-left: 5px;
+        text-align: right;    }
+    .pledge {
+        margin-left: 10px;
+    }
+    .reward{
+        padding-top: 10px;
+    }
+    .ent {
+        display: none;
+    }
+    .ent-pc {
+        display: flex;
+    }
+    .left-modal{
+        display:none;
+    }
+    .p-left {
+        display: none;
+    }
+    .span-left-modal{
+        color: black;
+        font-size: 1.3rem;
+        font-weight: 900;
+    }
+    .span-left {
+        float: right;
+        position: relative;
+        top: 3px;
+        display: block;
+    }
+}
+@media(min-width: 1300px){
+    a{
+        padding: 25px;
+    }
+    .crowd{
+        padding: 40px 250px;
+    }
+}
